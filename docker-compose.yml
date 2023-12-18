@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: fast_api-db
+    image: postgres:14-alpine
+    restart: unless-stopped
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          memory: 128Mb
+    ports:
+      - "5432:5432"
+    command: -c shared_buffers=500MB -c fsync=off
+    environment:
+      POSTGRES_USER: ${PGUSER:-pg}
+      POSTGRES_PASSWORD: ${PGPASSWORD:-pg}
+      POSTGRES_DB: ${PGDATABASE:-}
+    healthcheck:
+      start_period: 5s
+      test: "pg_isready"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fast_api
+
+networks:
+  fast_api:
+
+volumes:
+  fast_api_pg_data:
+    driver: local
