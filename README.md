@@ -10,20 +10,24 @@
 
 ## Development:
 
-1. Prepare
+0. Prepare
 
 - Install dependencies: `poetry install`
 - Activate venv: `poetry shell`
 
-2. Install lib
+1. Install lib
 
 - production: `poetry install <lib-name>`
 - dev: `poetry install -Gdev <lib-name>`
 
-3. Run
+2. Run
+- Run in local:
+  - start compose stack for local database: `docker compose up -d`
+  - start local server: `poetry run start`
+    server's running in:
+      - _localhost:8000_
+      - swagger: _localhost:8000/docs_
 
-- Run in local: `poetry run start`
-
-4. Migration
+3. Migration
 - Generate new migration: `alembic revision --autogenerate -m "<message here>"`
 - Run migration: `alembic upgrade head`
