@@ -24,10 +24,12 @@
 - Run in local:
   - start compose stack for local database: `docker compose up -d`
   - start local server: `poetry run start`
-    server's running in:
-      - _localhost:8000_
+      - server's running in: _localhost:8000_
       - swagger: _localhost:8000/docs_
 
 3. Migration
+
+    Make sure you're in venv shell: `poetry shell`
+
 - Generate new migration: `alembic revision --autogenerate -m "<message here>"`
 - Run migration: `alembic upgrade head`

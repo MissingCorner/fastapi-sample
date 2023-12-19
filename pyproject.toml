@@ -40,4 +40,4 @@ force_grid_wrap = 0
 line_length = 120
 
 [tool.poetry.scripts]
-start = "portal.main:start"
+start = "scripts.start:start"
