@@ -23,3 +23,7 @@
 3. Run
 
 - Run in local: `poetry run start`
+
+4. Migration
+- Generate new migration: `alembic revision --autogenerate -m "<message here>"`
+- Run migration: `alembic upgrade head`

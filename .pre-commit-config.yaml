@@ -8,7 +8,12 @@ repos:
       - id: end-of-file-fixer
       - id: check-yaml
       - id: check-added-large-files
-  - repo: https://github.com/psf/black
-    rev: 23.12.0
+  - repo: local
     hooks:
-      - id: black
+      - id: lint
+        name: Lint
+        entry: ./scripts/lint.sh
+        language: script
+        types: [python]
+        stages:
+          - pre-commit

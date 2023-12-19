@@ -22,7 +22,7 @@ services:
       start_period: 5s
       test: "pg_isready"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - fast_api_pg_data:/var/lib/postgresql/data
     networks:
       - fast_api
 

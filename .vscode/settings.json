@@ -3,12 +3,18 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.addImport.exactMatchOnly": true,
   "python.analysis.autoFormatStrings": true,
-  "python.analysis.completeFunctionParens": true,
   "python.analysis.gotoDefinitionInStringLiteral": true,
   "python.analysis.inlayHints.callArgumentNames": "partial",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "[python]": {
+    "editor.insertSpaces": true
+  },
+  "cSpell.words": ["autoflush", "jsonable", "sessionmaker", "sqlalchemy"],
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "isort.check": true,
+  "editor.detectIndentation": false
 }
